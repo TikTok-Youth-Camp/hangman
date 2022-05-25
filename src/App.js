@@ -43,7 +43,7 @@ function App() {
       <Header/>
       <div className="game-container">
       <WrongLetters wrongLetters={wrongLetters} />
-      <Figure/>
+      <Figure wrongLetters={wrongLetters} />
       <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
     </>

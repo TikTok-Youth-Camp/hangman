@@ -11,7 +11,7 @@ body {
   align-items: left;
   height: 80vh;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 h1 {
@@ -36,15 +36,20 @@ h1 {
   padding: 20px 30px;
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 450px;
+  display: grid;
+  /*height: 350px;
+  width: 450px;*/
 }
+
 
 .figure-container {
   fill: transparent;
   stroke: #fff;
   stroke-width: 4px;
   stroke-linecap: round;
+  grid-column: 1;
+  grid-row: 1/2;
+
 }
 
 .figure-part {
@@ -52,12 +57,11 @@ h1 {
 }
 
 .wrong-letters-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: left;
+  grid-row: 2;
+  grid-column: 2;
 }
 
 .wrong-letters-container p {
@@ -70,10 +74,8 @@ h1 {
 
 .word {
   display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .letter {
@@ -141,3 +143,4 @@ h1 {
 .notification-container.show {
   transform: translateY(-50px);
 }
+

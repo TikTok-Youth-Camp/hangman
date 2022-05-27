@@ -9,14 +9,13 @@ export function checkWin(correct, wrong, word) {
     let status = 'win';
 
     //check for win
-    word.splpit('').forEach(letter => {
+    word.split('').forEach(letter => {
         if(!correct.includes(letter)){
             status = '';
         }
     })
 
     // check if lose
-    if(wrong.length == 6) status = 'lose';
 
     return status;
 }

@@ -16,7 +16,7 @@ function App() {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
-  const [showNotification, setShowNotification] = useState(false);
+  const [attempted, setAttempted] = useState(false);
 
   useEffect(() => {
     const handleKeydown = event => {
@@ -27,13 +27,13 @@ function App() {
             if (!correctLetters.includes(letter)) {
               setCorrectLetters(currentLetters => [...currentLetters, letter]);
             } else {
-              show(setShowNotification);
+              show(setAttempted);
             }
           } else {
             if (!wrongLetters.includes(letter)) {
               setWrongLetters(currentLetters => [...currentLetters, letter]);
             } else {
-              show(setShowNotification);
+              show(setAttempted);
             }
           }
         }
@@ -63,7 +63,7 @@ function App() {
       </div>
       <Popup correctLetters={correctLetters} wrongLetters={wrongLetters}
       selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain}/>
-      <Notification showNotification={showNotification} />
+      <Notification attempted={attempted} />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Notification = ({ showNotification }) => {
+const Notification = ({ attempted }) => {
   return (
-    <div className={`notification-container ${showNotification ? 'show' : ''}`}>
-      <p>Try another letter, you have already entered this letter</p>
+    <div className={`notification ${attempted ? 'show' : ''}`}>
+      <p>You have attempted this letter before! :O </p>
     </div>
   )
 }

@@ -12,6 +12,7 @@ body {
   height: 80vh;
   margin: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -127,20 +128,25 @@ h1 {
   outline: 0;
 }
 
-.notification-container {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px 10px 0 0;
+.notification {
+  border-color: orange;
+  border: 2px solid orange;
   padding: 15px 20px;
   position: absolute;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 50px;
   bottom: -50px;
+  left: 25%;
   transition: transform 0.3s ease-in-out;
 }
 
-.notification-container p {
-  margin: 0;
+.notification p {
+  margin: auto;
 }
 
-.notification-container.show {
+.notification.show {
   transform: translateY(-50px);
 }
 

@@ -29,12 +29,10 @@ const Popup = ({
 
   if (checkWin(correctLetters, wrongLetters, selectedWord) === "win") {
     finalMessage = "Congratulations! You won!";
-    shareMessage += "\nWinner!";
     playable = false;
   } else if (checkWin(correctLetters, wrongLetters, selectedWord) === "lose") {
     finalMessage = "Unfortunately you lost.";
     finalMessageRevealWord = `... the word was: ${selectedWord}`;
-    shareMessage += "\nLost...";
     playable = false;
   }
 

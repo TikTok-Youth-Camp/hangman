@@ -55,11 +55,13 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <div className="game-container">
-      <WrongLetters wrongLetters={wrongLetters} />
-      <Figure wrongLetters={wrongLetters} />
-      <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+      <div className="page">
+        <Header/>
+        <div className="game-container">
+            <WrongLetters wrongLetters={wrongLetters} />
+            <Figure wrongLetters={wrongLetters} />
+            <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+        </div>
       </div>
       <Popup correctLetters={correctLetters} wrongLetters={wrongLetters}
       selectedWord={selectedWord} setNextRound={setNextRound} playAgain={playAgain}/>

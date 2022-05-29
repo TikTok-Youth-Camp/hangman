@@ -11,9 +11,10 @@ body {
   align-items: left;
   height: 80vh;
   margin: 0;
-  overflow: hidden;
   box-sizing: border-box;
+  overflow: hidden;
 }
+
 
 h1 {
   margin: 20px;
@@ -140,6 +141,7 @@ h1 {
   bottom: -50px;
   left: 25%;
   transition: transform 0.3s ease-in-out;
+  overflow:hidden;
 }
 
 .notification p {
@@ -161,11 +163,9 @@ h1 {
 */
 
 @media only screen and (max-width: 768px) {
-  * {
-    overflow:hidden;
-  }
 
-  .header {
+
+  .body {
     width: 100%;
   }
 
@@ -188,5 +188,8 @@ h1 {
     margin: 2vh;
     grid-column: 1;
     grid-row: 3;
+  }
+
+  .notification {
   }
 }

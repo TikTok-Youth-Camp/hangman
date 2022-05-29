@@ -15,6 +15,9 @@ body {
   overflow: hidden;
 }
 
+input {
+    display:none;
+}
 
 h1 {
   margin: 20px;
@@ -152,18 +155,15 @@ h1 {
   transform: translateY(-50px);
 }
 
-/*
+
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  /*
-  [class*=""] {
-    width: 100%;
+
+  input {
+    display: unset;
+    width: 60vw;
+    margin: 0 20vw;
+    box-sizing: border-box;
   }
-}
-*/
-
-@media only screen and (max-width: 768px) {
-
 
   .body {
     width: 100%;

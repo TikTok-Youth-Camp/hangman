@@ -10,7 +10,8 @@ import Notification from "./components/Notification";
 import "./App.css";
 
 var randomWords = require("random-words");
-let selectedWord = randomWords();
+let selectedWord = randomWords({exactly: 1, maxLength: 6})[0];
+console.log(selectedWord);
 
 function App() {
   const [nextRound, setNextRound] = useState(true);
@@ -50,7 +51,8 @@ function App() {
     //Empty Arrays
     setCorrectLetters([]);
     setWrongLetters([]);
-    selectedWord = randomWords();
+    selectedWord = randomWords({exactly: 1, maxLength: 6})[0];
+    console.log(selectedWord);
   }
 
   return (

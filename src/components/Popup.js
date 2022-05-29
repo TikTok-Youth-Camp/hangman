@@ -12,7 +12,6 @@ const Popup = ({
   let wordMessage = "";
   let nextRound = true;
   let shareMessageList = [
-
     "Hangman\n____\n|    |\n|\n|\n|\n|___\nCorrect Letters:",
     "Hangman\n____\n|    |\n|    o\n|\n|\n|___\nCorrect Letters:",
     "Hangman\n____\n|    |\n|    o\n|    |\n|\n|___\nCorrect Letters:",
@@ -22,11 +21,14 @@ const Popup = ({
     "Hangman\n____\n|    |\n|    o\n|   /|)\n|    /|\n|___\nCorrect Letters:",
   ];
   let shareMessage =
-    shareMessageList[wrongLetters.length + 1] +
+    shareMessageList[wrongLetters.length] +
     correctLetters.length +
     "/" +
     selectedWord.length;
 
+  console.log(shareMessageList[1]);
+  console.log(correctLetters.length);
+  console.log(wrongLetters.length);
   if (checkWin(correctLetters, wrongLetters, selectedWord) === "win") {
     resMessage = "CONGRATULATIONS!! You have saved the hanged man :D";
     nextRound = false;

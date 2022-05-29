@@ -191,5 +191,15 @@ h1 {
   }
 
   .notification {
+    visibility: hidden;
   }
+
+  .notification.show {
+    visibility: visible;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-50px);
+  }
+
+
 }

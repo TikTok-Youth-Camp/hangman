@@ -47,6 +47,7 @@ const Popup = ({
         <h2>{resMessage}</h2>
         <h3>{wordMessage}</h3>
         <button onClick={playAgain}>Play Again</button>
+        <h3> </h3>
         <button
           onClick={() => {
             navigator.clipboard.writeText(shareMessage);

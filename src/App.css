@@ -166,11 +166,11 @@ h1 {
   }
 
   .body {
-    width: 100%;
+    width: 100vw;
   }
 
   .game-container {
-    width: 100%;
+    width: 100vw;
   }
 
   .figure-container {

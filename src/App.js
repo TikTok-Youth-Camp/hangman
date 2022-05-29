@@ -9,8 +9,8 @@ import Notification from './components/Notification';
 
 import './App.css';
 
-const words = ['application', 'programming', 'interface', 'wizard'];
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+var randomWords = require('random-words');
+let selectedWord = randomWords();
 
 function App() {
   const [nextRound, setNextRound] = useState(true);
@@ -49,9 +49,8 @@ function App() {
       //Empty Arrays
       setCorrectLetters([]);
       setWrongLetters([]);
+      selectedWord = randomWords();
 
-      const random = Math.floor(Math.random()*words.length);
-      selectedWord = words[random];
   }
 
   return (

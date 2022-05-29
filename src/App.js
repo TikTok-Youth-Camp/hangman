@@ -13,7 +13,7 @@ const words = ['application', 'programming', 'interface', 'wizard'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function App() {
-  const [playable, setPlayable] = useState(true);
+  const [nextRound, setNextRound] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [attempted, setAttempted] = useState(false);
@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const handleKeydown = event => {
       const { key, keyCode } = event;
-        if (playable && keyCode >= 65 && keyCode <= 90) {
+        if (nextRound && keyCode >= 65 && keyCode <= 90) {
           const letter = key.toLowerCase();
           if (selectedWord.includes(letter)) {
             if (!correctLetters.includes(letter)) {
@@ -40,10 +40,11 @@ function App() {
     }
     window.addEventListener('keydown', handleKeydown);
     return () => window.removeEventListener('keydown', handleKeydown);
-  },[correctLetters, wrongLetters, playable]);
+  },[correctLetters, wrongLetters, nextRound]);
 
   function playAgain() {
-      setPlayable(true);
+      setNextRound(true);
+      setNextRound(true);
 
       //Empty Arrays
       setCorrectLetters([]);
@@ -62,7 +63,7 @@ function App() {
       <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
       <Popup correctLetters={correctLetters} wrongLetters={wrongLetters}
-      selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain}/>
+      selectedWord={selectedWord} setNextRound={setNextRound} playAgain={playAgain}/>
       <Notification attempted={attempted} />
     </>
   );

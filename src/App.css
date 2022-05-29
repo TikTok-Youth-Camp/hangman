@@ -131,6 +131,7 @@ h1 {
 }
 
 .notification {
+  background-color: #000;
   border-color: orange;
   border: 2px solid orange;
   padding: 8px 20px;

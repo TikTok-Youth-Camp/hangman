@@ -3,34 +3,54 @@
 }
 
 body {
-  background-color: #34495e;
+  background-color: #000;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   height: 80vh;
   margin: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 h1 {
-  margin: 20px 0 0;
+  margin: 20px;
+}
+
+.p1 {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-align: right;
+  color: red
+}
+
+.header {
+    border: 2px solid;
+    margin: 30px 30px;
+    padding: 10px 30px;
 }
 
 .game-container {
   padding: 20px 30px;
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 450px;
+  display: grid;
+  /*height: 350px;
+  width: 450px;*/
 }
+
 
 .figure-container {
   fill: transparent;
   stroke: #fff;
   stroke-width: 4px;
   stroke-linecap: round;
+  grid-column: 1;
+  grid-row: 1/2;
+
 }
 
 .figure-part {
@@ -38,12 +58,11 @@ h1 {
 }
 
 .wrong-letters-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: left;
+  grid-row: 2;
+  grid-column: 2;
 }
 
 .wrong-letters-container p {
@@ -56,10 +75,8 @@ h1 {
 
 .word {
   display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .letter {
@@ -111,19 +128,36 @@ h1 {
   outline: 0;
 }
 
-.notification-container {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px 10px 0 0;
+.notification {
+  border-color: orange;
+  border: 2px solid orange;
   padding: 15px 20px;
   position: absolute;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 50px;
   bottom: -50px;
+  left: 25%;
   transition: transform 0.3s ease-in-out;
 }
 
-.notification-container p {
-  margin: 0;
+.notification p {
+  margin: auto;
 }
 
-.notification-container.show {
+.notification.show {
   transform: translateY(-50px);
+}
+
+@media screen and (max-width: 768px) {
+  .page-layout {
+    grid-template-areas:
+      "header"
+      "figure-container"
+      "wrong-letters-container"
+      "word"
+      "notification";
+    grid-template-columns: 1fr;
+  }
 }

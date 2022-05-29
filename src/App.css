@@ -80,14 +80,14 @@ h1 {
 }
 
 .letter {
-  border-bottom: 3px solid #2980b9;
+  border: 3px solid #045863;
   display: inline-flex;
   font-size: 30px;
   align-items: center;
   justify-content: center;
   margin: 0 3px;
   height: 50px;
-  width: 20px;
+  width: 50px;
 }
 
 .popup-container {
@@ -150,14 +150,43 @@ h1 {
   transform: translateY(-50px);
 }
 
-@media screen and (max-width: 768px) {
-  .page-layout {
-    grid-template-areas:
-      "header"
-      "figure-container"
-      "wrong-letters-container"
-      "word"
-      "notification";
-    grid-template-columns: 1fr;
+/*
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  /*
+  [class*=""] {
+    width: 100%;
+  }
+}
+*/
+
+@media only screen and (max-width: 768px) {
+  * {
+    overflow:hidden;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .game-container {
+    width: 100%;
+  }
+
+  .figure-container {
+    grid-column: 1;
+    grid-row: 1/2;
+  }
+
+  .wrong-letters-container{
+    padding: 2vh;
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .word {
+    margin: 2vh;
+    grid-column: 1;
+    grid-row: 3;
   }
 }

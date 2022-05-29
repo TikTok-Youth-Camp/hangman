@@ -150,3 +150,14 @@ h1 {
   transform: translateY(-50px);
 }
 
+@media screen and (max-width: 768px) {
+  .page-layout {
+    grid-template-areas:
+      "header"
+      "figure-container"
+      "wrong-letters-container"
+      "word"
+      "notification";
+    grid-template-columns: 1fr;
+  }
+}
